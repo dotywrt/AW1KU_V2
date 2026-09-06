@@ -81,7 +81,7 @@ dump_part() {
     echo "Full size : $expected bytes"
 
     # No count= is used. This reads the ENTIRE partition.
-    dd if="$dev" of="$OUTDIR/$outfile" bs=1M
+    dd if="$dev" of="$OUTDIR/$outfile" bs=200M
 
     actual="$(wc -c < "$OUTDIR/$outfile" | tr -d ' ')"
     echo "Dumped    : $actual bytes"
